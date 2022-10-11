@@ -9,7 +9,7 @@ void	*memmove(void *dest, const void *src, size_t n)
 	char		*lastd;
 
 	d = dest;
-	s = source;
+	s = src;
 	if (d < s)
 		while (n--)
 			*d++ = *s++;

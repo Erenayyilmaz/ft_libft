@@ -1,8 +1,7 @@
 #include <stdlib.h>
 
 int	ft_strlen(char	*s);
-int	ft_memcmp(const void *, const void *, size_t)
-
+int	memcmp(const void *s1, const void *s2, size_t n);
 
 char	*ft_strnstr(const char *s, const char *find, size_t slen)
 {
@@ -15,11 +14,10 @@ char	*ft_strnstr(const char *s, const char *find, size_t slen)
 	len = ft_strlen(find);
 	while (s[index + len] != '\0')
 	{
-		if (!ft_memcmp(tmp, find, len + 1))//len+1 i kontrol et
+		if (!ft_memcmp(tmp, find, (len + 1)))
 			tmp++;
 		else
 			return (tmp);
 		index++;
 	}
-	return (0);
 }
