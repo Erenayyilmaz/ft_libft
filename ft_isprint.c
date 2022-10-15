@@ -6,9 +6,11 @@
 /*   By: kayyilma <kayyilma@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 15:19:36 by kayyilma          #+#    #+#             */
-/*   Updated: 2022/10/03 15:25:39 by kayyilma         ###   ########.fr       */
+/*   Updated: 2022/10/16 02:05:21 by kayyilma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isprint(int c)
 {

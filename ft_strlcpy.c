@@ -1,7 +1,16 @@
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kayyilma <kayyilma@student.42kocaeli.co    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/16 02:03:02 by kayyilma          #+#    #+#             */
+/*   Updated: 2022/10/16 02:03:02 by kayyilma         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-size_t	ft_strlen(const char *s);
-void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n);
+#include "libft.h"
 
 size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
 {

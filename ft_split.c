@@ -1,4 +1,16 @@
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kayyilma <kayyilma@student.42kocaeli.co    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/16 02:01:16 by kayyilma          #+#    #+#             */
+/*   Updated: 2022/10/16 02:01:23 by kayyilma         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
 
 static int	is_sep(const char *s, char c, int index)
 {
@@ -90,17 +102,4 @@ char	**ft_split(char const *s, char c)
 	}
 	strings[index] = 0;
 	return (strings);
-}
-
-#include <stdio.h>
-
-int main(int argc, char const *argv[])
-{
-	char	**arr;
-	arr = ft_split("qqqeasdasezxcegeetreyert", 'e');
-	for (int i = 0; i < 8; i++)
-	{
-		printf("%s",arr[i]);
-	}
-	return 0;
 }

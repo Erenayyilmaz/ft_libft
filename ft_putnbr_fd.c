@@ -1,6 +1,16 @@
-#include <unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kayyilma <kayyilma@student.42kocaeli.co    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/16 02:00:47 by kayyilma          #+#    #+#             */
+/*   Updated: 2022/10/16 02:05:54 by kayyilma         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void	ft_putchar_fd(char c, int fd);
+#include "libft.h"
 
 void	ft_putnbr_fd(int nb, int fd)
 {

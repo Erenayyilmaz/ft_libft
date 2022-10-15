@@ -6,15 +6,15 @@
 /*   By: kayyilma <kayyilma@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 15:25:59 by kayyilma          #+#    #+#             */
-/*   Updated: 2022/10/03 16:27:48 by kayyilma         ###   ########.fr       */
+/*   Updated: 2022/10/16 02:00:20 by kayyilma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-void	*memset(void *b, int c, size_t len)
+void	*ft_memset(void *b, int c, size_t len)
 {
-	int		index;
+	size_t		index;
 	char	*tmp;
 
 	index = 0;

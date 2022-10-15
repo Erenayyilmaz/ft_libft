@@ -1,16 +1,25 @@
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kayyilma <kayyilma@student.42kocaeli.co    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/16 02:04:03 by kayyilma          #+#    #+#             */
+/*   Updated: 2022/10/16 02:04:04 by kayyilma         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int	ft_strlen(char	*s);
-int	memcmp(const void *s1, const void *s2, size_t n);
+#include "libft.h"
 
 char	*ft_strnstr(const char *s, const char *find, size_t slen)
 {
 	size_t		len;
 	size_t		index;
-	const char	*tmp;
+	char		*tmp;
 
 	index = 0;
-	tmp = (const char *)s;
+	tmp = s;
 	len = ft_strlen(find);
 	while (s[index + len] != '\0')
 	{

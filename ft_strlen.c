@@ -6,11 +6,11 @@
 /*   By: kayyilma <kayyilma@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 15:21:12 by kayyilma          #+#    #+#             */
-/*   Updated: 2022/10/03 15:25:33 by kayyilma         ###   ########.fr       */
+/*   Updated: 2022/10/16 02:03:09 by kayyilma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {

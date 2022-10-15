@@ -1,6 +1,16 @@
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kayyilma <kayyilma@student.42kocaeli.co    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/16 02:01:42 by kayyilma          #+#    #+#             */
+/*   Updated: 2022/10/16 02:06:41 by kayyilma         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int	ft_strlen(char *);
+#include "libft.h"
 
 char	*ft_strdup(const char *s)
 {
@@ -11,7 +21,7 @@ char	*ft_strdup(const char *s)
 	index = 0;
 	len = ft_strlen(s);
 	tmp = (char *)malloc(1 + (sizeof(char) * len));
-	if(!tmp)
+	if (!tmp)
 		return (0);
 	while (index <= len)
 	{

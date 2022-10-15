@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kayyilma <kayyilma@student.42kocaeli.co    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/16 01:59:40 by kayyilma          #+#    #+#             */
+/*   Updated: 2022/10/16 01:59:40 by kayyilma         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 {
-	char	*td;
+	char		*td;
 	const char	*ts;
 
 	td = (char *)dst;

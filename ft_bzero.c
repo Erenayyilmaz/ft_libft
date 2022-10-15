@@ -6,11 +6,11 @@
 /*   By: kayyilma <kayyilma@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 15:45:24 by kayyilma          #+#    #+#             */
-/*   Updated: 2022/10/03 15:59:25 by kayyilma         ###   ########.fr       */
+/*   Updated: 2022/10/16 01:56:23 by kayyilma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	bzero(void *s, size_t n)
 {

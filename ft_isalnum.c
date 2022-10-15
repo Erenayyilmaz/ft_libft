@@ -6,12 +6,11 @@
 /*   By: kayyilma <kayyilma@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 15:08:14 by kayyilma          #+#    #+#             */
-/*   Updated: 2022/10/03 15:18:30 by kayyilma         ###   ########.fr       */
+/*   Updated: 2022/10/16 01:57:22 by kayyilma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c);
-int	ft_isdigit(int c);
+#include "libft.h"
 
 int	ft_isalnum(int c)
 {

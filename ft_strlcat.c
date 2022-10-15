@@ -1,7 +1,16 @@
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kayyilma <kayyilma@student.42kocaeli.co    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/16 02:02:35 by kayyilma          #+#    #+#             */
+/*   Updated: 2022/10/16 02:02:48 by kayyilma         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-size_t	ft_strlen(const char *s);
-void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n);
+#include "libft.h"
 
 size_t	strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
 {
@@ -14,5 +23,5 @@ size_t	strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
 		d++;
 	destlen = d - dst;
 	n = dstsize - destlen;
-	
+	return ;
 }
