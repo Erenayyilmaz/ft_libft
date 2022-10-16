@@ -6,7 +6,7 @@
 /*   By: kayyilma <kayyilma@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 01:58:51 by kayyilma          #+#    #+#             */
-/*   Updated: 2022/10/16 02:07:05 by kayyilma         ###   ########.fr       */
+/*   Updated: 2022/10/16 13:48:57 by kayyilma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,3 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	if (!lst || !f || !del)
 		return (0);
 }
-
