@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: kayyilma <kayyilma@student.42kocaeli.co    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/16 02:01:16 by kayyilma          #+#    #+#             */
-/*   Updated: 2022/10/16 02:01:23 by kayyilma         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "libft.h"
 
 static int	is_sep(const char *s, char c, int index)
@@ -19,10 +7,10 @@ static int	is_sep(const char *s, char c, int index)
 	return (0);
 }
 
-static size_t	count_str(const char *s, char c)
+static int	count_str(const char *s, char c)
 {
-	size_t	index;
-	size_t	sc;
+	int	index;
+	int	sc;
 
 	sc = 0;
 	index = 0;
@@ -38,9 +26,9 @@ static size_t	count_str(const char *s, char c)
 static int	*count_words(const char *s, char c)
 {
 	int		*arr;
-	size_t	index;
-	size_t	wc;
-	size_t	win;
+	int	index;
+	int	wc;
+	int	win;
 
 	index = 0;
 	wc = 0;
@@ -60,22 +48,23 @@ static int	*count_words(const char *s, char c)
 	return (arr);
 }	
 
-void	fill_arr(char *str, char c, int whi, char const *s)
+static void	fill_arr(char **str, char c, int whi, char const *s)
 {
-	size_t	index;
-	size_t	sc;
+	int	index;
+	int	sc;
 
 	index = 0;
 	sc = 0;
-	while (str[index])
+	while (*str[index])
 	{
-		if (is_sep(str, c, index))
+		if (is_sep(*str, c, index))
 			sc++;
 		if (sc == whi)
 		{
-			while (str[index] != c)
+			while (*str[index] != c)
 			{
-				str[index] = s[index];
+				*str[index] = s[index];
+				printf("%s",*str[index]);
 				index++;
 			}
 			break ;
@@ -86,7 +75,7 @@ void	fill_arr(char *str, char c, int whi, char const *s)
 
 char	**ft_split(char const *s, char c)
 {
-	size_t	index;
+	int		index;
 	char	**strings;
 	int		*arr;
 
@@ -97,9 +86,21 @@ char	**ft_split(char const *s, char c)
 	while (strings[index])
 	{
 		strings[index] = malloc(sizeof(char) * arr[index] + 1);
-		fill_arr(strings[index], c, index, s);
+		fill_arr(&strings[index], c, index, s);
 		index++;
 	}
 	strings[index] = 0;
 	return (strings);
+}
+
+#include <stdio.h>
+int	main(void)
+{
+	char	delim = ' ';
+	char	*src = "ahmet eryilmaz bir numara";
+	char	**sonuc;
+	int		i = -1;
+	sonuc = ft_split(src, delim);
+	while (i++ < 4)
+		printf("%d. kisim: %s\n", i ,sonuc[i]);
 }

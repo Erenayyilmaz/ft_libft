@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kayyilma <kayyilma@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/16 01:59:01 by kayyilma          #+#    #+#             */
-/*   Updated: 2022/10/16 01:59:01 by kayyilma         ###   ########.fr       */
+/*   Created: 2022/10/16 17:36:26 by kayyilma          #+#    #+#             */
+/*   Updated: 2022/10/16 17:37:41 by kayyilma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,14 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	t_list	*tmp;
-	int		sz;
+	int	index;
 
-	tmp = lst;
-	sz = 0;
-	while (tmp)
+	index = 0;
+	if (!lst)
+		return (0);
+	while (lst->next)
 	{
-		tmp = tmp->next;
-		sz++;
+		index++;
 	}
-	return (sz);
+	return (index);
 }

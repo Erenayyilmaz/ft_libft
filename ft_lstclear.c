@@ -5,25 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: kayyilma <kayyilma@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/16 01:58:30 by kayyilma          #+#    #+#             */
-/*   Updated: 2022/10/16 01:58:32 by kayyilma         ###   ########.fr       */
+/*   Created: 2022/10/16 17:35:09 by kayyilma          #+#    #+#             */
+/*   Updated: 2022/10/16 17:37:30 by kayyilma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void*))
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list	*nl;
-	t_list	*ntl;
+	t_list	*nw;
 
-	nl = *lst;
-	while (nl)
+	nw = (t_list *)malloc(sizeof(t_list));
+	if (!lst)
+		return ;
+	nw = lst;
+	while (nw->next)
 	{
-		ntl = nl->next;
-		del(nl->content);
-		free(nl);
-		nl = ntl;
+		nw = nw->next;
 	}
-	*lst = 0;
+	free(nw);
+	ft_lstclear(lst, &del);
 }

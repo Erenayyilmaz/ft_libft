@@ -6,7 +6,7 @@
 /*   By: kayyilma <kayyilma@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 02:03:19 by kayyilma          #+#    #+#             */
-/*   Updated: 2022/10/16 02:06:24 by kayyilma         ###   ########.fr       */
+/*   Updated: 2022/10/16 17:35:16 by kayyilma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		tmp[i] = f(i, s[i]);
 		i++;
 	}
+	tmp[i] = 0;
 	return (tmp);
 }

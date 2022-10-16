@@ -1,18 +1,6 @@
-#  |  |  ___ \    \  |         |
-#  |  |     ) |  |\/ |   _  |  |  /   _ 
-# ___ __|  __/   |   |  (   |    <    __/ 
-#    _|  _____| _|  _| \__,_| _|\_\ \___|
-#                              by jcluzet
-################################################################################
-#                                     CONFIG                                   #
-################################################################################
-
 NAME        := a.out
 CC        := gcc
 FLAGS    := -Wall -Wextra -Werror 
-################################################################################
-#                                 PROGRAM'S SRCS                               #
-################################################################################
 
 SRCS        :=      ft_lstclear.c \
                           ft_lstsize.c \
@@ -87,11 +75,11 @@ bonus:		all
 
 clean:
 			@ ${RM} *.o */*.o */*/*.o
-			@ echo "$(RED)Deleting $(CYAN)$(NAME) $(CLR_RMV)objs ✔️"
+			@ echo "$(RED)Deleting $(CYAN)$(NAME) $(CLR_RMV)objs"
 
 fclean:		clean
 			@ ${RM} ${NAME}
-			@ echo "$(RED)Deleting $(CYAN)$(NAME) $(CLR_RMV)binary ✔️"
+			@ echo "$(RED)Deleting $(CYAN)$(NAME) $(CLR_RMV)binary"
 
 re:			fclean all
 

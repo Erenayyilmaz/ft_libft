@@ -6,7 +6,7 @@
 /*   By: kayyilma <kayyilma@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 02:04:33 by kayyilma          #+#    #+#             */
-/*   Updated: 2022/10/16 02:04:34 by kayyilma         ###   ########.fr       */
+/*   Updated: 2022/10/16 15:51:56 by kayyilma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*tmp;
 
 	first = 0;
-	last = ft_strlen(s1);
+	last = ft_strlen(s1) - 1;
 	while (s1[first] != '\0' && is_in_set(s1, set))
 		first++;
 	while (s1[last] != '\0' && is_in_set(s1, set))

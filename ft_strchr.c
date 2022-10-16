@@ -6,9 +6,11 @@
 /*   By: kayyilma <kayyilma@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 02:01:28 by kayyilma          #+#    #+#             */
-/*   Updated: 2022/10/16 02:01:30 by kayyilma         ###   ########.fr       */
+/*   Updated: 2022/10/16 15:29:05 by kayyilma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {

@@ -6,7 +6,7 @@
 /*   By: kayyilma <kayyilma@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 02:04:43 by kayyilma          #+#    #+#             */
-/*   Updated: 2022/10/16 02:04:44 by kayyilma         ###   ########.fr       */
+/*   Updated: 2022/10/16 17:42:21 by kayyilma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,10 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*tmp;
-	size_t	index;
+	size_t	index;//kontrollleri yap iden kucuk vs vs
 
+	if (index < len)
+		return (0);
 	tmp = (char *)malloc((sizeof(char) * len) + 1);
 	while (index < len)
 	{

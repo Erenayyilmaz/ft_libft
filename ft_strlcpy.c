@@ -6,7 +6,7 @@
 /*   By: kayyilma <kayyilma@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 02:03:02 by kayyilma          #+#    #+#             */
-/*   Updated: 2022/10/16 02:03:02 by kayyilma         ###   ########.fr       */
+/*   Updated: 2022/10/16 15:36:13 by kayyilma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
 {
-	size_t	index;
 	size_t	srclen;
 
 	srclen = ft_strlen(src);
