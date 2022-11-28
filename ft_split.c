@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kayyilma <kayyilma@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/11/28 10:50:51 by kayyilma          #+#    #+#             */
+/*   Updated: 2022/11/28 11:00:38 by kayyilma         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static int	is_sep(const char *s, char c, int index)
@@ -26,9 +38,9 @@ static int	count_str(const char *s, char c)
 static int	*count_words(const char *s, char c)
 {
 	int		*arr;
-	int	index;
-	int	wc;
-	int	win;
+	int		index;
+	int		wc;
+	int		win;
 
 	index = 0;
 	wc = 0;
@@ -64,7 +76,6 @@ static void	fill_arr(char **str, char c, int whi, char const *s)
 			while (*str[index] != c)
 			{
 				*str[index] = s[index];
-				printf("%s",*str[index]);
 				index++;
 			}
 			break ;
@@ -91,16 +102,4 @@ char	**ft_split(char const *s, char c)
 	}
 	strings[index] = 0;
 	return (strings);
-}
-
-#include <stdio.h>
-int	main(void)
-{
-	char	delim = ' ';
-	char	*src = "ahmet eryilmaz bir numara";
-	char	**sonuc;
-	int		i = -1;
-	sonuc = ft_split(src, delim);
-	while (i++ < 4)
-		printf("%d. kisim: %s\n", i ,sonuc[i]);
 }

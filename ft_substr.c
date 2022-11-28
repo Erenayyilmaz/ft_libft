@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kayyilma <kayyilma@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: kayyilma <kayyilma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 02:04:43 by kayyilma          #+#    #+#             */
-/*   Updated: 2022/10/16 17:42:21 by kayyilma         ###   ########.fr       */
+/*   Updated: 2022/11/28 10:49:43 by kayyilma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,24 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*tmp;
-	size_t	index;//kontrollleri yap iden kucuk vs vs
+	size_t	i;
+	size_t	j;
+	char	*str;
 
-	if (index < len)
-		return (0);
-	tmp = (char *)malloc((sizeof(char) * len) + 1);
-	while (index < len)
+	str = (char *)malloc(sizeof(*s) * (len + 1));
+	if (!str)
+		return (NULL);
+	i = 0;
+	j = 0;
+	while (s[i])
 	{
-		tmp[index] = s[start + index];
-		index++;
+		if (i >= start && j < len)
+		{
+			str[j] = s[i];
+			j++;
+		}
+		i++;
 	}
-	tmp[index] = '\0';
-	return (tmp);
+	str[j] = '\0';
+	return (str);
 }

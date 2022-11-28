@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kayyilma <kayyilma@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: kayyilma <kayyilma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 02:01:28 by kayyilma          #+#    #+#             */
-/*   Updated: 2022/10/16 15:29:05 by kayyilma         ###   ########.fr       */
+/*   Updated: 2022/11/28 10:39:16 by kayyilma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,16 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int	index;
+	char	*str;
 
-	index = 0;
-	while (s[index] != (char)c && s)
-		index++;
-	if (index != 0)
-		return (s[index]);
-	return (0);
+	str = (char *)s;
+	while (*str != c)
+	{
+		if (*str == '\0')
+		{
+			return (NULL);
+		}
+		str++;
+	}
+	return (str);
 }

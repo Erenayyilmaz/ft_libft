@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kayyilma <kayyilma@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: kayyilma <kayyilma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 01:58:51 by kayyilma          #+#    #+#             */
-/*   Updated: 2022/10/16 13:48:57 by kayyilma         ###   ########.fr       */
+/*   Updated: 2022/11/28 10:55:26 by kayyilma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,17 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 
 	if (!lst || !f || !del)
 		return (0);
+	nl = NULL;
+	while (lst)
+	{
+		nn = ft_lstnew(f(lst->content));
+		if (!nn)
+		{
+			ft_lstclear(&nl, del);
+			return (0);
+		}
+		lst = lst->next;
+		ft_lstadd_back(&nl, nn);
+	}
+	return (nl);
 }

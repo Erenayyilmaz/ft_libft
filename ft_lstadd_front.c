@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kayyilma <kayyilma@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: kayyilma <kayyilma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 01:58:24 by kayyilma          #+#    #+#             */
-/*   Updated: 2022/10/16 02:06:05 by kayyilma         ###   ########.fr       */
+/*   Updated: 2022/11/21 18:11:49 by kayyilma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	}
 	if (!new)
 		return ;
-	new->next = lst;
+	new->next = *lst;
 	*lst = new;
 }
