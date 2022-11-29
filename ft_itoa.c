@@ -3,60 +3,72 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kayyilma <kayyilma@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: kayyilma <kayyilma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 01:58:05 by kayyilma          #+#    #+#             */
-/*   Updated: 2022/10/16 01:58:06 by kayyilma         ###   ########.fr       */
+/*   Updated: 2022/11/28 20:06:14 by kayyilma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	is_neg(int n)
+static int	digit(int n)
 {
+	int	count;
+
+	count = 0;
+	if (n == -2147483648)
+		return (11);
 	if (n < 0)
+	{
+		count ++;
+		n = -n;
+	}
+	if (n == 0)
 		return (1);
-	return (0);
+	while (n)
+	{
+		n /= 10;
+		count ++;
+	}
+	return (count);
 }
 
-static char	*putmembers(char *s, int num, size_t len, int neg)
+static char	*limit(int n)
 {
-	size_t	i;
+	char	*result;
 
-	i = 0;
-	s[len] = '\0';
-	while (i < len)
-	{
-		s[len - i - 1] = (num % 10) + '0';
-		i++;
-		num /= 10;
-	}
-	if (neg)
-		s[0] = '-';
-	return (s);
+	if (n == -2147483648)
+		result = ft_strdup("-2147483648");
+	else if (n == 0)
+		result = ft_strdup("0");
+	else
+		result = ft_strdup("");
+	return (result);
 }
 
 char	*ft_itoa(int n)
 {
-	char	*str;
-	int		neg;
-	long	len;
-	long	tmp;
+	char	*result;
+	int		bas;
+	int		tmp;
 
-	neg = 0;
+	if (n == 0 || n == -2147483648)
+		return (limit(n));
+	bas = digit(n);
+	result = (char *)malloc(bas + 1);
+	if (!result)
+		return (0);
+	result[bas] = '\0';
 	tmp = n;
-	len = 0;
-	neg = is_neg(n);
-	if (neg == 1)
+	if (n < 0)
+		n = -n;
+	while (n)
 	{
-		n = n * (-1);
-		len++;
+		result[--bas] = n % 10 + 48;
+		n /= 10;
 	}
-	while (tmp)
-	{
-		tmp /= 10;
-		len++;
-	}
-	str = (char *)malloc(sizeof(char) * len);
-	return (putmembers(str, n, len, neg));
+	if (tmp < 0)
+		result[0] = '-';
+	return (result);
 }

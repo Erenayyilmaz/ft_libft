@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kayyilma <kayyilma@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: kayyilma <kayyilma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 02:02:16 by kayyilma          #+#    #+#             */
-/*   Updated: 2022/10/16 02:02:21 by kayyilma         ###   ########.fr       */
+/*   Updated: 2022/11/28 20:04:56 by kayyilma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,14 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	len1;
-	size_t	len2;
-	size_t	index;
-	char	*tmp;
+	char	*result;
 
-	index = 0;
-	len1 = ft_strlen(s1);
-	len2 = ft_strlen(s2);
-	tmp = (char *)malloc(len1 + len2 - 1);
-	if (!tmp)
+	if (!s1 || !s2)
 		return (0);
-	while (index < len1 - 1)
-	{
-		tmp[index] = s1[index];
-		index++;
-	}
-	index = 0;
-	while (index < len2)
-	{
-		tmp[len1 + index] = s2[index];
-		index++;
-	}
-	return (tmp);
+	result = (char *) malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!result)
+		return (0);
+	ft_strlcpy(result, s1, ft_strlen(s1) + 1);
+	ft_strlcat(result, s2, ft_strlen(result) + ft_strlen(s2) + 1);
+	return (result);
 }

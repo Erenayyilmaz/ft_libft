@@ -6,27 +6,22 @@
 /*   By: kayyilma <kayyilma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 17:35:09 by kayyilma          #+#    #+#             */
-/*   Updated: 2022/11/28 11:07:38 by kayyilma         ###   ########.fr       */
+/*   Updated: 2022/11/28 20:06:14 by kayyilma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	t_list	*nw;
-	t_list	*tmp;
+	t_list	*head;
 
-	nw = (t_list *)malloc(sizeof(t_list));
-	tmp = (t_list *)malloc(sizeof(t_list));
-	if (!lst)
-		return ;
-	nw = *lst;
-	while (nw->next)
+	while (*lst)
 	{
-		tmp = nw;
-		nw = nw->next;
-		free(tmp);
+		head = (*lst)->next;
+		del((*lst)->content);
+		free(*lst);
+		*lst = head;
 	}
-	ft_lstclear(lst, del);
+	*lst = NULL;
 }

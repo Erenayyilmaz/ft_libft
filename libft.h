@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kayyilma <kayyilma@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: kayyilma <kayyilma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 14:05:26 by kayyilma          #+#    #+#             */
-/*   Updated: 2022/10/16 14:05:38 by kayyilma         ###   ########.fr       */
+/*   Updated: 2022/11/28 16:30:55 by kayyilma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ int				ft_isprint(int c);
 char			*ft_itoa(int n);
 
 void			*ft_memccpy(void *dst, const void *src, int c, size_t n);
+
+void			ft_striteri(char *s, void (*f)(unsigned int, char*));
 
 void			*ft_memchr(const void *s, int c, size_t n);
 

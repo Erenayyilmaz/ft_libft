@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kayyilma <kayyilma@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: kayyilma <kayyilma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 15:19:36 by kayyilma          #+#    #+#             */
-/*   Updated: 2022/10/16 02:05:21 by kayyilma         ###   ########.fr       */
+/*   Updated: 2022/11/28 20:06:14 by kayyilma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_isprint(int c)
 {
-	if (c <= 176 && c >= 0)
+	if (c <= 126 && c >= 32)
 	{
 		return (1);
 	}

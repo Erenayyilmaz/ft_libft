@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kayyilma <kayyilma@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: kayyilma <kayyilma@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/16 17:36:26 by kayyilma          #+#    #+#             */
-/*   Updated: 2022/10/16 17:37:41 by kayyilma         ###   ########.fr       */
+/*   Updated: 2022/11/28 20:06:14 by kayyilma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,16 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	int	index;
+	int		index;
+	t_list	*elem;
 
 	index = 0;
-	if (!lst)
-		return (0);
-	while (lst->next)
+	if (lst == NULL)
+		return (index);
+	elem = lst;
+	while (elem != NULL)
 	{
+		elem = elem->next;
 		index++;
 	}
 	return (index);
